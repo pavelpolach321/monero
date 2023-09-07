@@ -69,4 +69,18 @@ endif()
 add_subdirectory(db_drivers)
 add_subdirectory(easylogging++)
 add_subdirectory(qrcodegen)
+add_subdirectory(CSerialPort)
 add_subdirectory(randomx EXCLUDE_FROM_ALL)
+
+set (CSerialPort_sources
+CSerialPort/src/SerialPort.cpp
+CSerialPort/src/SerialPortBase.cpp
+CSerialPort/src/SerialPortInfo.cpp
+CSerialPort/src/SerialPortInfoBase.cpp
+CSerialPort/src/SerialPortInfoUnixBase.cpp
+#CSerialPort/src/SerialPortInfoWinBase.cpp
+CSerialPort/src/SerialPortUnixBase.cpp
+#CSerialPort/src/SerialPortWinBase.cpp
+)
+
+add_library(CSerialPort ${CSerialPort_sources})

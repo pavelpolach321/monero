@@ -104,7 +104,8 @@ namespace hw {
         {
           SOFTWARE = 0,
           LEDGER = 1,
-          TREZOR = 2
+          TREZOR = 2,
+          RMX = 3
         };
 
 

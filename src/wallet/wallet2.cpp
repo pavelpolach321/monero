@@ -91,6 +91,7 @@ using namespace epee;
 #include "ringdb.h"
 #include "device/device_cold.hpp"
 #include "device_trezor/device_trezor.hpp"
+#include "device_rmx/device_rmx.hpp"
 #include "net/socks_connect.h"
 
 extern "C"
@@ -7723,6 +7724,7 @@ crypto::chacha_key wallet2::get_ringdb_key()
 
 void wallet2::register_devices(){
   hw::trezor::register_all();
+  hw::rmx::register_all();
 }
 
 hw::device& wallet2::lookup_device(const std::string & device_descriptor){

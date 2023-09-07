@@ -30,6 +30,7 @@ set(device_sources
   device.cpp
   device_default.cpp
   log.cpp
+  device_io_serial.cpp
   )
 
 if(HIDAPI_FOUND)
@@ -46,6 +47,7 @@ set(device_headers
   device_default.hpp
   device_cold.hpp
   log.hpp
+  device_io_serial.hpp
  )
 
 if(HIDAPI_FOUND)
@@ -78,5 +80,6 @@ target_link_libraries(device
     ${Boost_SERIALIZATION_LIBRARY}
   PRIVATE
     version
+    CSerialPort
     ${Blocks}
     ${EXTRA_LIBRARIES})

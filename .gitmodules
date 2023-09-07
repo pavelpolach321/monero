@@ -14,3 +14,6 @@
 	path = external/supercop
 	url = https://github.com/monero-project/supercop
 	branch = monero
+[submodule "external/CSerialPort"]
+	path = external/CSerialPort
+	url = https://github.com/itas109/CSerialPort

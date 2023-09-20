@@ -14,3 +14,6 @@
 	path = external/supercop
 	url = https://github.com/monero-project/supercop
 	branch = monero
+[submodule "external/SimpleBLE"]
+	path = external/SimpleBLE
+	url = https://github.com/OpenBluetoothToolbox/SimpleBLE

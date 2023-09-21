@@ -26,10 +26,14 @@
 # STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF
 # THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+# because of SimpleBLE library
+set(CMAKE_CXX_STANDARD 17)
+
 set(device_sources
   device.cpp
   device_default.cpp
   log.cpp
+  device_io_ble.cpp
   )
 
 if(HIDAPI_FOUND)
@@ -45,6 +49,7 @@ set(device_headers
   device_io.hpp
   device_default.hpp
   device_cold.hpp
+  device_io_ble.hpp
   log.hpp
  )
 
@@ -69,6 +74,8 @@ monero_add_library(device
 
 target_link_libraries(device
   PUBLIC
+    simpleble
+    dbus-1
     ${HIDAPI_LIBRARIES}
     cncrypto
     cryptonote_format_utils_basic
